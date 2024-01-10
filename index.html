@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criação de Portal TJBA</title>
+</head>
+<body>
+  <h1>Criação de Portal</h1>
+  <form id="portalForm">
+    <label for="portalName">Digite o nome do portal:</label>
+    <input type="text" id="portalName" name="portalName" required>
+    <button type="button" onclick="createPortal()">Criar Portal</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function createPortal() {
+      var portalName = document.getElementById("portalName").value;
+
+      // Envia o nome do portal para o script no servidor usando XMLHttpRequest
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "create_portal.php", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200) {
+            // Exibe a resposta do servidor
+            document.getElementById("result").innerHTML = xhr.responseText;
+          } else {
+            // Exibe uma mensagem de erro se a requisição não for bem-sucedida
+            document.getElementById("result").innerHTML = "Erro na requisição. Código de status: " + xhr.status;
+          }
+        }
+      };
+      xhr.send("portalName=" + encodeURIComponent(portalName));
+    }
+  </script>
+</body>
+</html>
+
+
