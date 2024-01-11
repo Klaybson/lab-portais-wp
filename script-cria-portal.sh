@@ -3,15 +3,19 @@
 # Solicita o nome do portal do argumento passado
 portal="$1"
 
-# Verifica se o arquivo que armazena a porta já existe
-if [ ! -f "port_$portal" ]; then
+# Verifica se o arquivo que armazena a porta já existe no diretório de controle
+if [ ! -f "/var/www/html/devops/porta-controle/port_$portal" ]; then
   # Se não existe, gera uma porta aleatória
   porta=$(shuf -i 8000-8999 -n 1)
-  echo $porta > "port_$portal"
+  echo $porta > "/var/www/html/devops/porta-controle/port_$portal"
 else
   # Se o arquivo existe, lê a porta armazenada
-  porta=$(cat "port_$portal")
+  porta=$(cat "/var/www/html/devops/porta-controle/port_$portal")
 fi
+
+# Criar diretório do volume
+mkdir -p /var/www/html/$portal
+# sleep 2
 
 sleep 5
 echo "Criando o contêiner Docker para o portal $portal..."
@@ -23,9 +27,8 @@ echo "Tentativa de execução do Docker" >> /tmp/docker_script_log.txt
   --name $portal \
   --restart=always \
   -e PORTAL=$portal \
-  -v "/var/www/html/$portal:/var/www/html/$portal" \
-  portais-tjba 2>&1 >> /tmp/docker_script_log.txt
+  -v "/var/www/html/$portal:/var/www/html/" \
+  portais-tjba:1 2>&1 >> /tmp/docker_script_log.txt
 
-echo "Portal criado"
+echo "Portal $portal criado"
 echo "URL: http://srvslabl002.tjba.jus.br:$porta "
-
