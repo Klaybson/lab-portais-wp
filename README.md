@@ -10,6 +10,10 @@ Este script em bash é simplesmente incrível! Ele cria e gerencia contêineres 
 
 - **NOME_DO_PORTAL**: O nome do portal será usado como identificador único para o contêiner Docker. 🏰
 
+- Ou via WEB
+
+Após a execução, seu portal estará disponível em [http://localhost:8080](http://localhost:8080). Você também pode acessar diretamente clicando no link fornecido. 🌐 
+
 ## Funcionalidades Fantásticas
 
 Automatiza a criação de portais em WordPress em contêineres Docker com gerenciamento de portas:
