@@ -1,6 +1,3 @@
-O GitHub usa a linguagem de marcação Markdown para formatar o conteúdo exibido em arquivos README. O código HTML não é diretamente interpretado no GitHub, mas você pode utilizar a sintaxe Markdown para fornecer uma formatação adequada. No entanto, é importante notar que a personalização de estilo usando HTML pode não ser totalmente suportada no GitHub.
-
-Aqui está o conteúdo do README em formato Markdown:
 
 ```markdown
 # Script de Criação de Portal Docker
