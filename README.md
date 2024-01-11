@@ -1,109 +1,46 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+O GitHub usa a linguagem de marcação Markdown para formatar o conteúdo exibido em arquivos README. O código HTML não é diretamente interpretado no GitHub, mas você pode utilizar a sintaxe Markdown para fornecer uma formatação adequada. No entanto, é importante notar que a personalização de estilo usando HTML pode não ser totalmente suportada no GitHub.
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Descrição do Projeto</title>
+Aqui está o conteúdo do README em formato Markdown:
 
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 20px;
-    }
+```markdown
+# Script de Criação de Portal Docker
 
-    h1 {
-      color: #333;
-    }
+Este script em bash cria e gerencia contêineres Docker para portais web, utilizando um Dockerfile chamado `portais` para criar os contêineres. Essa imagem utiliza o WordPress:8-apache.
 
-    code {
-      background-color: #f0f0f0;
-      padding: 2px 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-family: 'Courier New', monospace;
-    }
+## Uso
 
-    pre {
-      background-color: #f0f0f0;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      overflow-x: auto;
-    }
+```bash
+./script-cria-portal.sh NOME_DO_PORTAL
+```
 
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
+- **NOME_DO_PORTAL**: O nome do portal que será usado como identificador único para o contêiner Docker.
 
-    li {
-      margin-bottom: 10px;
-    }
+## Funcionalidades
 
-    button {
-      background-color: #4caf50;
-      color: #fff;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
+Automatiza a criação de portais em WordPress em contêineres Docker com gerenciamento de portas:
 
-    button:hover {
-      background-color: #45a049;
-    }
-  </style>
-</head>
+1. **Geração de Porta Aleatória:**
+   - Gera uma porta aleatória se a porta não estiver definida no arquivo de controle.
 
-<body>
+2. **Verificação de Existência do Arquivo de Controle:**
+   - Verifica se o arquivo que armazena a porta já existe no diretório de controle.
 
-  <div>
-    <h1>Descrição do Projeto: Script de Criação de Portal Docker</h1>
+3. **Criação do Diretório do Volume:**
+   - Cria o diretório do volume no caminho `/var/www/html/NOME_DO_PORTAL`.
 
-    <p>O projeto consiste em um script em bash dedicado à criação e gestão de contêineres Docker destinados a portais web. Utilizando um Dockerfile denominado <code>portais</code>, o script automatiza o processo de configuração desses contêineres, utilizando como base a imagem <code>WordPress:8-apache</code>.</p>
+## Dependências
 
-    <h2>Uso</h2>
-    <pre><code>./script-cria-portal.sh NOME_DO_PORTAL</code></pre>
+Certifique-se de que as seguintes dependências estão instaladas:
 
-    <p><strong>NOME_DO_PORTAL:</strong> O nome do portal é utilizado como identificador único para o contêiner Docker que será criado.</p>
-
-    <h2>Funcionalidades</h2>
-    <ul>
-      <li><strong>Geração de Porta Aleatória:</strong>
-        <ul>
-          <li>Caso a porta não esteja definida no arquivo de controle, o script gera automaticamente uma porta aleatória para o portal.</li>
-        </ul>
-      </li>
-
-      <li><strong>Verificação de Existência do Arquivo de Controle:</strong>
-        <ul>
-          <li>Garante que o arquivo responsável por armazenar a porta do portal já exista no diretório de controle.</li>
-        </ul>
-      </li>
-
-      <li><strong>Criação do Diretório do Volume:</strong>
-        <ul>
-          <li>Cria o diretório do volume no caminho <code>/var/www/html/NOME_DO_PORTAL</code>.</li>
-        </ul>
-      </li>
-    </ul>
-
-    <h2>Dependências</h2>
-    <pre><code>sudo apt install docker.io -y
+```bash
+sudo apt install docker.io -y
 mkdir -p /srv/scripts/script-cria-portal/devops/porta-controle
 sudo chown apache.apache /var/www/html/
-docker build -t "portais" .</code></pre>
+docker build -t "portais" .
+```
 
-    <h2>Autor</h2>
-    <p>Autor: <a href="mailto:klaybson@gmail.com">klaybson@gmail.com</a></p>
+## Autor
 
-    <p>Este projeto proporciona uma solução simplificada e automatizada para a criação de portais em WordPress em ambientes Docker, garantindo maior eficiência e controle sobre o processo de provisionamento.</p>
-  </div>
-
-</body>
-
-</html>
+Autor: [klaybson@gmail.com](mailto:klaybson@gmail.com)
+```
 
