@@ -1,0 +1,33 @@
+# Script de Criação de Portal Docker
+
+
+Este script em bash cria e gerencia contêineres Docker para portais web. Ele utiliza um Dockerfile chamado `portais` para criar os contêineres.
+Essa imagem utilizou o wordpress:8-apache
+## Uso
+
+
+./script-cria-portal.sh NOME_DO_PORTAL
+
+
+
+NOME_DO_PORTAL: O nome do portal que será usado como identificador único para o contêiner Docker.
+
+Funcionalidades
+Automatizar criacao de portais em wordpress para conteiner docker com gerencia de portas:
+
+Gera uma porta aleatória se a porta não estiver definida no arquivo de controle.
+Verificação de Existência do Arquivo de Controle:
+
+Verifica se o arquivo que armazena a porta já existe no diretório de controle.
+
+Cria o diretório do volume no caminho /var/www/html/NOME_DO_PORTAL.
+
+
+
+Dependências
+Certifique-se de que as seguintes dependências estão instaladas:
+apt install docker.io -y
+mkdir -p /srv/scripts/script-cria-portal/devops/porta-controle
+chown apache.apache /var/www/html/
+
+Autor: klaybson@gmail.com
