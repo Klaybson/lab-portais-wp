@@ -1,4 +1,4 @@
-# 🚀 Script Incrível de Criação de Portal Docker 🌐
+# 🚀 Script de Criação de Portal Docker 🌐
 
 Este script em bash é simplesmente incrível! Ele cria e gerencia contêineres Docker para portais web, utilizando um Dockerfile chamado `portais` para criar os contêineres. E o melhor: essa imagem utiliza o WordPress:8-apache. 🌟
 
@@ -10,11 +10,11 @@ Este script em bash é simplesmente incrível! Ele cria e gerencia contêineres 
 
 - **NOME_DO_PORTAL**: O nome do portal será usado como identificador único para o contêiner Docker. 🏰
 
-- Ou via WEB
+## Ou via WEB
 
 Após a execução, seu portal estará disponível em [http://localhost:8080](http://localhost:8080). Você também pode acessar diretamente clicando no link fornecido. 🌐 
 
-## Funcionalidades Fantásticas
+## Funcionalidades 
 
 Automatiza a criação de portais em WordPress em contêineres Docker com gerenciamento de portas:
 
@@ -27,7 +27,7 @@ Automatiza a criação de portais em WordPress em contêineres Docker com gerenc
 3. **Criação do Diretório do Volume:**
    - Cria o diretório do volume no caminho `/var/www/html/NOME_DO_PORTAL`. 📁
 
-## Dependências Mágicas
+## Dependências 
 
 Certifique-se de que as seguintes dependências foram realizadas como num passe de mágica:
 
@@ -38,6 +38,6 @@ sudo chown apache.apache /var/www/html/
 docker build -t "portais" .
 ```
 
-## Autor Mágico ✨
+## Autor ✨
 
 Autor: [klaybson@gmail.com](mailto:klaybson@gmail.com) 🧙‍♂️
