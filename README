@@ -29,5 +29,6 @@ Certifique-se de que as seguintes dependências estão instaladas:
 apt install docker.io -y
 mkdir -p /srv/scripts/script-cria-portal/devops/porta-controle
 chown apache.apache /var/www/html/
+docker build -t "portais" . 
 
 Autor: klaybson@gmail.com
