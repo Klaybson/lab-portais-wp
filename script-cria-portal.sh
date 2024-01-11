@@ -4,13 +4,13 @@
 portal="$1"
 
 # Verifica se o arquivo que armazena a porta já existe no diretório de controle
-if [ ! -f "/var/www/html/devops/porta-controle/port_$portal" ]; then
+if [ ! -f "/srv/scripts/script-cria-portal/devops/porta-controle/port_$portal" ]; then
   # Se não existe, gera uma porta aleatória
   porta=$(shuf -i 8000-8999 -n 1)
-  echo $porta > "/var/www/html/devops/porta-controle/port_$portal"
+  echo $porta > "/srv/scripts/script-cria-portal/devops/porta-controle/port_$portal"
 else
   # Se o arquivo existe, lê a porta armazenada
-  porta=$(cat "/var/www/html/devops/porta-controle/port_$portal")
+  porta=$(cat "/srv/scripts/script-cria-portal/devops/porta-controle/port_$portal")
 fi
 
 # Criar diretório do volume
